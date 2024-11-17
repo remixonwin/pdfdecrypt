@@ -1,0 +1,109 @@
+{
+    "quizzes": [
+        {
+            "title": "Minnesota Driver's Manual Quiz (Pages 60-70)",
+            "questions": [
+                {
+                    "number": 1,
+                    "question": "What is the maximum number of passengers allowed in a vehicle with a Class D license?",
+                    "options": ["2", "5", "No limit", "Depends on the vehicle"]
+                },
+                {
+                    "number": 2,
+                    "question": "What should you do if you see a 'Pedestrian Crossing' sign?",
+                    "options": ["Speed up", "Slow down and be prepared to stop", "Ignore it", "Only stop if pedestrians are present"]
+                },
+                {
+                    "number": 3,
+                    "question": "What does a yellow diamond-shaped sign typically indicate?",
+                    "options": ["Regulatory information", "Warning of potential hazards", "Information about services", "Construction zone"]
+                },
+                {
+                    "number": 4,
+                    "question": "When are you required to stop for a school bus?",
+                    "options": ["Only if the lights are flashing", "When the bus is on the opposite side of the road", "Always, regardless of the direction", "Only during school hours"]
+                },
+                {
+                    "number": 5,
+                    "question": "What does a 'No U-Turn' sign mean?",
+                    "options": ["You can make a U-turn", "U-turns are prohibited in that area", "U-turns are allowed only at intersections", "U-turns are allowed only during certain times"]
+                },
+                {
+                    "number": 6,
+                    "question": "What is the purpose of a 'Yield' sign?",
+                    "options": ["To indicate a stop", "To indicate that you must give way to other traffic", "To allow you to proceed without stopping", "To indicate a speed limit"]
+                },
+                {
+                    "number": 7,
+                    "question": "What does a solid yellow line on your side of the road indicate?",
+                    "options": ["You may pass", "No passing allowed", "It is a warning sign", "It indicates a bike lane"]
+                },
+                {
+                    "number": 8,
+                    "question": "What should you do if you encounter a 'Slippery When Wet' sign?",
+                    "options": ["Speed up", "Slow down and drive cautiously", "Ignore the sign", "Only stop if it is raining"]
+                },
+                {
+                    "number": 9,
+                    "question": "What does a blue sign typically indicate?",
+                    "options": ["Regulatory information", "Services available for motorists", "Warning information", "Construction information"]
+                },
+                {
+                    "number": 10,
+                    "question": "What is the correct action when you see a 'Do Not Enter' sign?",
+                    "options": ["You may proceed", "You should not enter that road or lane", "You can only enter during certain times", "It is a warning sign"]
+                },
+                {
+                    "number": 11,
+                    "question": "What does a 'No Parking' sign indicate?",
+                    "options": ["You can park only during certain hours", "Parking is prohibited in that area", "You may park if you are a resident", "It is a loading zone"]
+                },
+                {
+                    "number": 12,
+                    "question": "When should you use your turn signal?",
+                    "options": ["Only when changing lanes", "When turning or changing lanes", "Only when other vehicles are present", "Never"]
+                },
+                {
+                    "number": 13,
+                    "question": "What does a 'Wrong Way' sign indicate?",
+                    "options": ["You are going the correct direction", "You are traveling in the wrong direction", "You should turn around", "It is a warning sign"]
+                },
+                {
+                    "number": 14,
+                    "question": "What should you do if you see a 'Road Work Ahead' sign?",
+                    "options": ["Speed up to pass quickly", "Slow down and be prepared for changes in traffic patterns", "Ignore the sign", "Only stop if workers are present"]
+                },
+                {
+                    "number": 15,
+                    "question": "What does a green traffic light mean?",
+                    "options": ["Stop", "Proceed with caution", "Go", "Yield"]
+                },
+                {
+                    "number": 16,
+                    "question": "What is the purpose of a 'Speed Limit' sign?",
+                    "options": ["To indicate the minimum speed", "To indicate the maximum speed allowed", "To indicate a construction zone", "To indicate a school zone"]
+                },
+                {
+                    "number": 17,
+                    "question": "What should you do if you are driving and your vehicle starts to skid?",
+                    "options": ["Turn the steering wheel in the opposite direction of the skid", "Slam on the brakes", "Steer in the direction you want to go", "Accelerate to regain control"]
+                },
+                {
+                    "number": 18,
+                    "question": "What does a 'Handicapped Parking' sign indicate?",
+                    "options": ["Parking is reserved for vehicles displaying disability permits", "Parking is allowed for anyone", "It is a loading zone", "No parking allowed"]
+                },
+                {
+                    "number": 19,
+                    "question": "What does a 'Railroad Crossing' sign indicate?",
+                    "options": ["You can cross without stopping", "A train may be approaching", "It is a warning sign", "You should speed up"]
+                },
+                {
+                    "number": 20,
+                    "question": "What should you do if you see a flashing red light at a railroad crossing?",
+                    "options": ["Proceed with caution", "Stop and wait for the train to pass", "Only stop if the train is visible", "Ignore the light"]
+                }
+            ]
+        }
+    ]
+}

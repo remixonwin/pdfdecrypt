@@ -1,0 +1,109 @@
+{
+    "quizzes": [
+        {
+            "title": "Minnesota Driver's Manual Quiz (Pages 80-90)",
+            "questions": [
+                {
+                    "number": 1,
+                    "question": "What does a flashing yellow light indicate?",
+                    "options": ["Stop", "Proceed with caution", "Go", "Yield"]
+                },
+                {
+                    "number": 2,
+                    "question": "When turning left at an intersection, what must you do?",
+                    "options": ["Yield to oncoming traffic", "Speed up to make the turn", "Ignore pedestrians", "Turn without looking"]
+                },
+                {
+                    "number": 3,
+                    "question": "What should you do if you see a pedestrian signal showing 'Don't Walk'?",
+                    "options": ["Cross the street quickly", "Wait until the signal changes", "Ignore the signal", "Walk anyway"]
+                },
+                {
+                    "number": 4,
+                    "question": "What does a green arrow signal mean?",
+                    "options": ["You must stop", "You can turn in the direction of the arrow", "You should yield", "You must proceed straight"]
+                },
+                {
+                    "number": 5,
+                    "question": "What is the purpose of pedestrian signals?",
+                    "options": ["To confuse drivers", "To provide information to pedestrians", "To indicate traffic flow", "To signal emergency vehicles"]
+                },
+                {
+                    "number": 6,
+                    "question": "What should you do if a traffic signal is not functioning?",
+                    "options": ["Treat the intersection as uncontrolled", "Ignore the intersection", "Proceed without stopping", "Wait for the signal to change"]
+                },
+                {
+                    "number": 7,
+                    "question": "What does a 'Do Not Enter' sign indicate?",
+                    "options": ["You may enter the road", "You should not enter that lane or road", "You can only enter during certain hours", "It is a warning sign"]
+                },
+                {
+                    "number": 8,
+                    "question": "What is the meaning of a 'Wrong Way' sign?",
+                    "options": ["You are going the correct direction", "You are traveling in the wrong direction", "You should turn around", "It is a suggestion"]
+                },
+                {
+                    "number": 9,
+                    "question": "What does a speed limit sign indicate?",
+                    "options": ["The minimum speed you can drive", "The maximum speed you can drive", "The average speed of traffic", "The speed limit is optional"]
+                },
+                {
+                    "number": 10,
+                    "question": "What should you do if you see a 'No Parking' sign?",
+                    "options": ["Park there anyway", "Find another place to park", "Stop and wait", "Ignore the sign"]
+                },
+                {
+                    "number": 11,
+                    "question": "What is the purpose of warning markings on the pavement?",
+                    "options": ["To decorate the road", "To provide information about road conditions", "To indicate speed limits", "To confuse drivers"]
+                },
+                {
+                    "number": 12,
+                    "question": "What should you do when you see a traffic officer directing traffic?",
+                    "options": ["Ignore the officer and follow traffic signals", "Obey the officer's hand signals", "Proceed as you wish", "Only obey if you feel like it"]
+                },
+                {
+                    "number": 13,
+                    "question": "What does a solid yellow line indicate?",
+                    "options": ["You may pass", "No passing allowed", "A bike lane", "A pedestrian crossing"]
+                },
+                {
+                    "number": 14,
+                    "question": "What should you do if you are driving and see a school zone sign?",
+                    "options": ["Speed up", "Slow down and watch for children", "Ignore the sign", "Change lanes"]
+                },
+                {
+                    "number": 15,
+                    "question": "What is the correct action when approaching a stop sign?",
+                    "options": ["Slow down and proceed without stopping", "Come to a complete stop", "Yield to oncoming traffic", "Ignore the sign"]
+                },
+                {
+                    "number": 16,
+                    "question": "What does a red light mean?",
+                    "options": ["Proceed with caution", "Stop", "Go", "Yield"]
+                },
+                {
+                    "number": 17,
+                    "question": "What should you do if you are driving and see a flashing red light?",
+                    "options": ["Slow down", "Stop completely and proceed when safe", "Ignore it", "Speed up"]
+                },
+                {
+                    "number": 18,
+                    "question": "What does a 'No Left Turn' sign indicate?",
+                    "options": ["You can turn left", "You must not turn left", "You can only turn left during certain hours", "It is a suggestion"]
+                },
+                {
+                    "number": 19,
+                    "question": "What is the purpose of carpool lanes?",
+                    "options": ["To allow single-occupancy vehicles", "To promote carpooling and reduce traffic", "To increase traffic congestion", "To provide parking"]
+                },
+                {
+                    "number": 20,
+                    "question": "What should you do if you encounter a traffic signal that is malfunctioning?",
+                    "options": ["Treat it as a stop sign", "Proceed without stopping", "Wait for it to start working", "Ignore it"]
+                }
+            ]
+        }
+    ]
+}

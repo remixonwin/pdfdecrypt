@@ -1,0 +1,109 @@
+{
+    "quizzes": [
+        {
+            "title": "Minnesota Driver's Manual Quiz (Pages 20-30)",
+            "questions": [
+                {
+                    "number": 1,
+                    "question": "What is the minimum age to obtain a provisional license in Minnesota?",
+                    "options": ["15", "16", "17", "18"]
+                },
+                {
+                    "number": 2,
+                    "question": "How long must you hold a provisional license before upgrading to a full license if you are under 21?",
+                    "options": ["6 months", "12 months", "18 months", "24 months"]
+                },
+                {
+                    "number": 3,
+                    "question": "What is one requirement for obtaining a provisional license?",
+                    "options": ["No moving violations", "Completion of a written test", "Completion of a vision test", "All of the above"]
+                },
+                {
+                    "number": 4,
+                    "question": "What happens if you receive a moving violation while holding a provisional license?",
+                    "options": ["You can still upgrade to a full license", "You must wait an additional 6 months", "You will lose your provisional license", "You must complete a driver education course"]
+                },
+                {
+                    "number": 5,
+                    "question": "What is the consequence of having a conviction for an alcohol violation while holding a provisional license?",
+                    "options": ["You can still upgrade to a full license", "You must wait an additional 12 months", "You will lose your provisional license", "You must complete a defensive driving course"]
+                },
+                {
+                    "number": 6,
+                    "question": "What type of license will you receive if you are under 21 years of age?",
+                    "options": ["Full license", "Provisional license", "Under-21 license", "Restricted license"]
+                },
+                {
+                    "number": 7,
+                    "question": "How often must you renew your driver's license if you are under 21?",
+                    "options": ["Every year", "Every two years", "Every four years", "Every five years"]
+                },
+                {
+                    "number": 8,
+                    "question": "What is required to apply for a new license after holding a provisional license?",
+                    "options": ["A written test", "A road test", "A vision test", "Completion of a driver education course"]
+                },
+                {
+                    "number": 9,
+                    "question": "What is the purpose of the 'Supervised Driving Log'?",
+                    "options": ["To track hours of driving experience", "To document vehicle maintenance", "To record traffic violations", "To list emergency contacts"]
+                },
+                {
+                    "number": 10,
+                    "question": "What must be included in the application for a driver's license?",
+                    "options": ["Proof of residency", "Proof of identity", "Proof of completion of driver education", "All of the above"]
+                },
+                {
+                    "number": 11,
+                    "question": "What is the maximum number of moving violations allowed before you cannot upgrade from a provisional license?",
+                    "options": ["1", "2", "3", "4"]
+                },
+                {
+                    "number": 12,
+                    "question": "What is the fee for upgrading from a provisional license to a full license?",
+                    "options": ["$5", "$10", "$20", "It varies by location"]
+                },
+                {
+                    "number": 13,
+                    "question": "What must you do if you are diagnosed with a medical condition that affects your driving?",
+                    "options": ["Ignore it", "Inform the Driver and Vehicle Services", "Stop driving immediately", "Consult a lawyer"]
+                },
+                {
+                    "number": 14,
+                    "question": "What is the consequence of providing false information on your driver's license application?",
+                    "options": ["A warning", "A fine", "Loss of driving privileges", "No consequence"]
+                },
+                {
+                    "number": 15,
+                    "question": "What is the minimum number of hours of behind-the-wheel instruction required for a provisional license?",
+                    "options": ["10 hours", "20 hours", "30 hours", "40 hours"]
+                },
+                {
+                    "number": 16,
+                    "question": "What should you do if you have a medical condition that could cause loss of consciousness?",
+                    "options": ["Continue driving", "Submit a statement from a physician", "Wait until the condition improves", "Inform your friends"]
+                },
+                {
+                    "number": 17,
+                    "question": "What is the purpose of the Driver Evaluation Unit?",
+                    "options": ["To issue licenses", "To evaluate medical conditions affecting driving", "To conduct road tests", "To provide driver education"]
+                },
+                {
+                    "number": 18,
+                    "question": "What is the requirement for a restricted farm work driver’s license?",
+                    "options": ["Must be at least 15 years old", "Must complete a driver education course", "Must be employed on a farm", "All of the above"]
+                },
+                {
+                    "number": 19,
+                    "question": "What is the maximum distance a restricted farm work driver can drive from their farmhouse?",
+                    "options": ["20 miles", "30 miles", "40 miles", "50 miles"]
+                },
+                {
+                    "number": 20,
+                    "question": "What must be presented to obtain a farm work driver’s license?",
+                    "options": ["A property tax statement", "A rental agreement", "A completed form from the parent or guardian", "All of the above"]
+                }
+            ]
+        }
+    ]
+}

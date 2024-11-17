@@ -1,0 +1,109 @@
+{
+    "quizzes": [
+        {
+            "title": "Minnesota Driver's Manual Quiz (Pages 118-138)",
+            "questions": [
+                {
+                    "number": 1,
+                    "question": "What is the minimum age to obtain a Class D driver's license in Minnesota?",
+                    "options": ["15", "16", "18", "21"]
+                },
+                {
+                    "number": 2,
+                    "question": "What should you do if you are involved in a minor accident with no injuries?",
+                    "options": ["Leave the scene", "Exchange information with the other driver", "Call the police immediately", "Only take pictures"]
+                },
+                {
+                    "number": 3,
+                    "question": "What is the purpose of a 'No Parking' sign?",
+                    "options": ["To indicate a loading zone", "To prohibit parking in that area", "To allow parking only for certain vehicles", "To indicate a bike lane"]
+                },
+                {
+                    "number": 4,
+                    "question": "When are you required to use your headlights?",
+                    "options": ["Only at night", "During rain, snow, or fog", "At all times", "Only when driving on highways"]
+                },
+                {
+                    "number": 5,
+                    "question": "What does a yellow diamond-shaped sign indicate?",
+                    "options": ["Regulatory sign", "Warning sign", "Information sign", "Construction sign"]
+                },
+                {
+                    "number": 6,
+                    "question": "What is the correct action when you see a pedestrian with a white cane?",
+                    "options": ["Speed up to pass", "Stop and yield the right of way", "Honk your horn", "Ignore the pedestrian"]
+                },
+                {
+                    "number": 7,
+                    "question": "What does a 'Slippery When Wet' sign warn you about?",
+                    "options": ["Icy conditions", "Wet road conditions", "Construction ahead", "Pedestrian crossing"]
+                },
+                {
+                    "number": 8,
+                    "question": "What is the proper way to handle a situation where you encounter a school zone?",
+                    "options": ["Speed up to pass quickly", "Slow down and watch for children", "Ignore the speed limit", "Only stop if children are present"]
+                },
+                {
+                    "number": 9,
+                    "question": "What does a solid red circle with a slash through it mean?",
+                    "options": ["You must stop", "You cannot do that action", "You may proceed", "It is a warning"]
+                },
+                {
+                    "number": 10,
+                    "question": "When should you use your turn signal?",
+                    "options": ["Only when changing lanes", "When turning or changing lanes", "Only when other vehicles are present", "Never"]
+                },
+                {
+                    "number": 11,
+                    "question": "What is the purpose of a 'Yield' sign?",
+                    "options": ["To indicate a stop", "To indicate that you must give way to other traffic", "To allow you to proceed without stopping", "To indicate a speed limit"]
+                },
+                {
+                    "number": 12,
+                    "question": "What should you do if you see a train approaching a crossing?",
+                    "options": ["Speed up to cross before the train arrives", "Stop and wait for the train to pass", "Proceed if you do not see the train", "Only stop if the lights are flashing"]
+                },
+                {
+                    "number": 13,
+                    "question": "What does a green traffic light mean?",
+                    "options": ["Stop", "Proceed with caution", "Go", "Yield"]
+                },
+                {
+                    "number": 14,
+                    "question": "What is the correct action when you see a 'Road Work Ahead' sign?",
+                    "options": ["Speed up to pass quickly", "Slow down and be prepared for changes in traffic patterns", "Ignore the sign", "Only stop if workers are present"]
+                },
+                {
+                    "number": 15,
+                    "question": "What should you do if you are driving and your vehicle starts to skid?",
+                    "options": ["Turn the steering wheel in the opposite direction of the skid", "Slam on the brakes", "Steer in the direction you want to go", "Accelerate"]
+                },
+                {
+                    "number": 16,
+                    "question": "What does a 'Handicapped Parking' sign indicate?",
+                    "options": ["Parking is reserved for vehicles displaying disability permits", "Parking is allowed for anyone", "It is a loading zone", "No parking allowed"]
+                },
+                {
+                    "number": 17,
+                    "question": "What does a 'Railroad Crossing' sign indicate?",
+                    "options": ["You can cross without stopping", "A train may be approaching", "It is a warning sign", "You should speed up"]
+                },
+                {
+                    "number": 18,
+                    "question": "What should you do if you see a flashing red light at a railroad crossing?",
+                    "options": ["Proceed with caution", "Stop and wait for the train to pass", "Only stop if the train is visible", "Ignore the light"]
+                },
+                {
+                    "number": 19,
+                    "question": "What is the purpose of the 'Move Over' law?",
+                    "options": ["To allow drivers to pass more easily", "To protect emergency vehicles and workers on the road", "To increase traffic fines", "To reduce traffic congestion"]
+                },
+                {
+                    "number": 20,
+                    "question": "What should you do if you are driving and feel drowsy?",
+                    "options": ["Keep driving", "Pull over and rest", "Drink coffee", "Turn up the radio"]
+                }
+            ]
+        }
+    ]
+}

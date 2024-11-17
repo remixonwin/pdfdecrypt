@@ -1,0 +1,109 @@
+{
+    "quizzes": [
+        {
+            "title": "Minnesota Driver's Manual Quiz (Pages 60-80)",
+            "questions": [
+                {
+                    "number": 1,
+                    "question": "What is the primary purpose of traffic signals?",
+                    "options": ["To confuse drivers", "To control the flow of traffic", "To decorate intersections", "To provide information"]
+                },
+                {
+                    "number": 2,
+                    "question": "What does a green traffic light indicate?",
+                    "options": ["Stop", "Proceed with caution", "Go", "Yield"]
+                },
+                {
+                    "number": 3,
+                    "question": "When should you use your high beams?",
+                    "options": ["In foggy conditions", "On open roads with no oncoming traffic", "In heavy rain", "When driving in the city"]
+                },
+                {
+                    "number": 4,
+                    "question": "What should you do if you are driving in fog?",
+                    "options": ["Use your high beams", "Use your low beams", "Drive at the speed limit", "Turn on your hazard lights"]
+                },
+                {
+                    "number": 5,
+                    "question": "What is the recommended following distance in ideal conditions?",
+                    "options": ["1 second", "2 seconds", "3 seconds", "4 seconds"]
+                },
+                {
+                    "number": 6,
+                    "question": "What should you do if you encounter a stopped school bus with its red lights flashing?",
+                    "options": ["Pass the bus at a slow speed", "Stop your vehicle", "Honk your horn", "Continue driving"]
+                },
+                {
+                    "number": 7,
+                    "question": "What does a yellow diamond-shaped sign indicate?",
+                    "options": ["Regulatory information", "Warning of potential hazards", "Directional information", "Speed limit"]
+                },
+                {
+                    "number": 8,
+                    "question": "When is it illegal to use a cell phone while driving?",
+                    "options": ["When you are stopped at a red light", "When you are using a hands-free device", "When you are under 18 years old", "It is never illegal"]
+                },
+                {
+                    "number": 9,
+                    "question": "What should you do if you miss your exit on the freeway?",
+                    "options": ["Back up to the exit", "Continue to the next exit", "Make a U-turn", "Stop on the freeway"]
+                },
+                {
+                    "number": 10,
+                    "question": "What is the purpose of a 'No U-Turn' sign?",
+                    "options": ["To indicate a one-way street", "To prohibit U-turns in that area", "To allow U-turns only at intersections", "To indicate a parking area"]
+                },
+                {
+                    "number": 11,
+                    "question": "What does a solid white line on the road indicate?",
+                    "options": ["You may change lanes", "No lane changes allowed", "A bike lane", "A pedestrian crossing"]
+                },
+                {
+                    "number": 12,
+                    "question": "What should you do if your vehicle starts to hydroplane?",
+                    "options": ["Brake hard", "Steer in the direction you want to go", "Accelerate", "Turn on your hazard lights"]
+                },
+                {
+                    "number": 13,
+                    "question": "What is the correct action when approaching a roundabout?",
+                    "options": ["Enter without stopping", "Yield to traffic already in the roundabout", "Stop before entering", "Speed up to merge"]
+                },
+                {
+                    "number": 14,
+                    "question": "What does a 'Yield' sign mean?",
+                    "options": ["Stop completely", "Slow down and give the right-of-way", "Proceed without stopping", "None of the above"]
+                },
+                {
+                    "number": 15,
+                    "question": "What is the maximum speed limit on most Minnesota highways?",
+                    "options": ["55 mph", "60 mph", "65 mph", "70 mph"]
+                },
+                {
+                    "number": 16,
+                    "question": "When should you use your turn signal?",
+                    "options": ["Only when changing lanes", "Only when turning", "Both A and B", "Never"]
+                },
+                {
+                    "number": 17,
+                    "question": "What should you do if you are driving and your tire blows out?",
+                    "options": ["Brake hard and steer to the side", "Hold the steering wheel firmly and slow down gradually", "Accelerate to regain control", "Turn on your hazard lights and stop immediately"]
+                },
+                {
+                    "number": 18,
+                    "question": "What is the purpose of the 'Move Over' law?",
+                    "options": ["To allow drivers to pass more easily", "To protect emergency vehicles and workers on the road", "To increase traffic fines", "To reduce traffic congestion"]
+                },
+                {
+                    "number": 19,
+                    "question": "What should you do if you are involved in a crash?",
+                    "options": ["Leave the scene", "Call the police and exchange information", "Argue with the other driver", "Ignore it"]
+                },
+                {
+                    "number": 20,
+                    "question": "What does a red circle with a slash through it indicate?",
+                    "options": ["You must stop", "You are allowed to proceed", "A prohibition of a certain action", "A warning"]
+                }
+            ]
+        }
+    ]
+}
