@@ -2,6 +2,7 @@ import streamlit as st
 import json
 from pathlib import Path
 from typing import Dict, List, Optional
+import random
 
 @st.cache_data
 def load_quiz_data() -> Dict[str, List[dict]]:
@@ -53,22 +54,18 @@ def main():
         'score': 0,
         'current_question': 0,
         'questions': [],
-        'selected_section': None
+        'current_section': None
     })
     
     quiz_data = load_quiz_data()
     if not quiz_data:
         st.error("No quiz data found. Please check the data directory.")
         return
-        
-    # Persist section selection
-    section = st.selectbox(
-        "Select Quiz Section:", 
-        list(quiz_data.keys()),
-        key='selected_section'
-    )
     
     if st.button("Start New Quiz"):
+        # Randomly select a section
+        section = random.choice(list(quiz_data.keys()))
+        st.session_state.current_section = section
         st.session_state.questions = quiz_data[section]
         st.session_state.score = 0
         st.session_state.current_question = 0
@@ -77,6 +74,10 @@ def main():
     if not st.session_state.questions:
         st.info("Please start a new quiz to begin.")
         return
+
+    # Display current section
+    if st.session_state.current_section:
+        st.subheader(f"Current Section: {st.session_state.current_section}")
 
     total_questions = len(st.session_state.questions)
     current_q_idx = st.session_state.current_question
@@ -99,6 +100,7 @@ def main():
         if st.button("Restart Quiz"):
             st.session_state.current_question = 0
             st.session_state.score = 0
+            st.session_state.current_section = None
             st.rerun()
 
 if __name__ == "__main__":
