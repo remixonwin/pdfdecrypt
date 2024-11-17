@@ -1,0 +1,109 @@
+{
+    "quizzes": [
+        {
+            "title": "Minnesota Driver's Manual Quiz (Pages 40-50)",
+            "questions": [
+                {
+                    "number": 1,
+                    "question": "What is the primary purpose of using turn signals?",
+                    "options": ["To indicate your speed", "To communicate your intentions to other drivers", "To alert pedestrians", "To signal for emergency assistance"]
+                },
+                {
+                    "number": 2,
+                    "question": "When should you use your headlights?",
+                    "options": ["Only at night", "During bad weather conditions and at night", "Only when driving on highways", "Never"]
+                },
+                {
+                    "number": 3,
+                    "question": "What does a solid yellow line on your side of the road indicate?",
+                    "options": ["You may pass", "You may not pass", "It is a bike lane", "It is a parking lane"]
+                },
+                {
+                    "number": 4,
+                    "question": "What should you do if you see a school bus with its stop arm extended?",
+                    "options": ["Slow down and pass carefully", "Stop your vehicle", "Honk your horn", "Continue driving"]
+                },
+                {
+                    "number": 5,
+                    "question": "What is the correct action when approaching a roundabout?",
+                    "options": ["Speed up to enter", "Yield to traffic already in the roundabout", "Stop before entering", "Ignore the roundabout"]
+                },
+                {
+                    "number": 6,
+                    "question": "What does a red traffic light mean?",
+                    "options": ["Proceed with caution", "Stop", "Yield", "Go"]
+                },
+                {
+                    "number": 7,
+                    "question": "When is it legal to make a right turn on red?",
+                    "options": ["After coming to a complete stop and ensuring it is safe", "Only when there is a sign permitting it", "Anytime", "Never"]
+                },
+                {
+                    "number": 8,
+                    "question": "What should you do if you are driving and a tire blows out?",
+                    "options": ["Slam on the brakes", "Steer straight and gradually slow down", "Accelerate to regain control", "Turn sharply to the side"]
+                },
+                {
+                    "number": 9,
+                    "question": "What is the minimum following distance you should maintain behind another vehicle?",
+                    "options": ["1 second", "2 seconds", "3 seconds", "4 seconds"]
+                },
+                {
+                    "number": 10,
+                    "question": "What does a flashing yellow light indicate?",
+                    "options": ["Stop", "Proceed with caution", "Yield", "Go"]
+                },
+                {
+                    "number": 11,
+                    "question": "When should you use your high beams?",
+                    "options": ["In foggy conditions", "On open roads without oncoming traffic", "In heavy traffic", "When driving in the city"]
+                },
+                {
+                    "number": 12,
+                    "question": "What is the purpose of a 'No U-Turn' sign?",
+                    "options": ["To indicate a parking area", "To prohibit making a U-turn", "To allow U-turns only at certain times", "To indicate a speed limit"]
+                },
+                {
+                    "number": 13,
+                    "question": "What should you do if you encounter an emergency vehicle with its lights flashing?",
+                    "options": ["Speed up to get out of the way", "Pull over to the right and stop", "Ignore the vehicle", "Continue driving as normal"]
+                },
+                {
+                    "number": 14,
+                    "question": "What does a 'Yield' sign mean?",
+                    "options": ["Stop completely", "Slow down and give the right of way to other vehicles", "Proceed without stopping", "It is a warning sign"]
+                },
+                {
+                    "number": 15,
+                    "question": "What is the legal blood alcohol concentration (BAC) limit for drivers over 21 in Minnesota?",
+                    "options": ["0.02", "0.04", "0.08", "0.10"]
+                },
+                {
+                    "number": 16,
+                    "question": "What should you do if you are driving and encounter a pedestrian crossing the road?",
+                    "options": ["Speed up to pass before they cross", "Stop and yield to the pedestrian", "Honk your horn", "Ignore the pedestrian"]
+                },
+                {
+                    "number": 17,
+                    "question": "What is the correct procedure for changing lanes?",
+                    "options": ["Signal, check mirrors, and then change lanes", "Change lanes without signaling", "Only check your mirrors", "Signal only"]
+                },
+                {
+                    "number": 18,
+                    "question": "What does a solid white line indicate?",
+                    "options": ["You may change lanes", "You should not change lanes", "It is a bike lane", "It is a parking lane"]
+                },
+                {
+                    "number": 19,
+                    "question": "When is it necessary to stop for a stop sign?",
+                    "options": ["Only if there are other vehicles present", "At all times, regardless of traffic", "Only during the day", "Only if you are turning"]
+                },
+                {
+                    "number": 20,
+                    "question": "What should you do if you are driving in fog?",
+                    "options": ["Use your high beams", "Use your low beams and reduce speed", "Drive at normal speed", "Turn on your hazard lights"]
+                        }
+                    ]
+                }
+            ]
+        }
