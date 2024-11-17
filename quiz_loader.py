@@ -39,17 +39,20 @@ def load_quiz_data() -> List[dict]:
         with open(csv_path, 'r') as file:
             reader = csv.DictReader(file)
             for row in reader:
-                # Format question data
-                question = {
-                    'question': row['Question'],
-                    'options': [row['Option A'], row['Option B'], row['Option C'], row['Option D']],
-                    'correct_answer': row['Correct Answer']
-                }
-                # Ensure options are properly formatted
-                question['options'] = [opt.strip() if opt is not None else '' for opt in question['options']]
-                # Ensure correct answer is properly formatted
-                question['correct_answer'] = question['correct_answer'].strip() if question['correct_answer'] is not None else ''
-                quiz_data.append(question)
+                try:
+                    # Format question data
+                    question = {
+                        'question': row['Question'],
+                        'options': [row['Option A'], row['Option B'], row['Option C'], row['Option D']],
+                        'correct_answer': row['Correct Answer']
+                    }
+                    # Ensure options are properly formatted
+                    question['options'] = [opt.strip() if opt is not None else '' for opt in question['options']]
+                    # Ensure correct answer is properly formatted
+                    question['correct_answer'] = question['correct_answer'].strip() if question['correct_answer'] is not None else ''
+                    quiz_data.append(question)
+                except KeyError as e:
+                    st.error(f"Missing or incorrect key in CSV data: {str(e)}")
     except Exception as e:
         st.error(f"Error reading quiz data: {str(e)}")
     
