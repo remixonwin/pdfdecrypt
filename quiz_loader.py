@@ -2,32 +2,68 @@ import csv
 from pathlib import Path
 import streamlit as st
 from typing import List
+import re
 
-# Define the path to your CSV file
-csv_file_path = 'Minnesota_Driving_Quiz.csv'
+def generate_explanation(question: str, correct_answer: str, topic: str) -> str:
+    """Generate an explanation for the correct answer based on context"""
+    
+    # Common explanation patterns based on question type
+    explanations = {
+        'Licensing': {
+            'pattern': r'(minimum|required|valid|fee)',
+            'template': "According to Minnesota Driver's Manual, {} is the correct requirement for {}."
+        },
+        'Rules and Regulations': {
+            'pattern': r'(must|required|legal|law)',
+            'template': "Minnesota law states that {} regarding {}."
+        },
+        'Road Signs': {
+            'pattern': r'sign|signal',
+            'template': "This traffic control device indicates {}. It's important to {} for road safety."
+        },
+        'Safety': {
+            'pattern': r'safety|emergency|caution',
+            'template': "For safety reasons, {} is the correct action when {}."
+        }
+    }
+    
+    # Clean up the question and answer
+    q_lower = question.lower()
+    
+    # Try to match topic-specific patterns
+    if topic in explanations:
+        pattern = explanations[topic]['pattern']
+        if re.search(pattern, q_lower):
+            # Extract relevant parts of the question
+            context = re.sub(r'^what (is|should|must|does)|[?]', '', q_lower).strip()
+            return explanations[topic]['template'].format(correct_answer, context)
+    
+    # Default explanation if no pattern matches
+    return f"The correct answer is {correct_answer}. This is based on Minnesota driving regulations and safety guidelines."
 
-# Read the CSV file and clean the options
-cleaned_rows = []
-with open(csv_file_path, 'r') as file:
-    reader = csv.DictReader(file)
-    for row in reader:
-        # Filter out None keys
-        row = {k: v for k, v in row.items() if k is not None}
-        # Clean the options by removing "a) ", "b) ", "c) ", "d) " prefixes
-        row['Option A'] = row['Option A'].replace('a) ', '').strip()
-        row['Option B'] = row['Option B'].replace('b) ', '').strip()
-        row['Option C'] = row['Option C'].replace('c) ', '').strip()
-        row['Option D'] = row['Option D'].replace('d) ', '').strip()
-        cleaned_rows.append(row)
-
-# Write the cleaned rows back to the same CSV file
-with open(csv_file_path, 'w', newline='') as file:
-    fieldnames = ['Question', 'Option A', 'Option B', 'Option C', 'Option D', 'Correct Answer']
-    writer = csv.DictWriter(file, fieldnames=fieldnames)
-    writer.writeheader()
-    writer.writerows(cleaned_rows)
-
-print(f"Options cleaned and saved to {csv_file_path}.")
+def categorize_question(question: str) -> str:
+    """Categorize questions based on content analysis"""
+    # Define topic keywords
+    topics = {
+        'Licensing': ['license', 'permit', 'renewal', 'application', 'fee', 'valid', 'provisional', 'duplicate'],
+        'Rules and Regulations': ['law', 'legal', 'requirement', 'required', 'must', 'penalty', 'consequence'],
+        'Road Signs': ['sign', 'signal', 'yield', 'turn', 'crossing', 'arrow'],
+        'Safety': ['safety', 'accident', 'crash', 'emergency', 'caution', 'danger'],
+        'Traffic Laws': ['traffic', 'speed', 'right of way', 'lane', 'merge', 'stop'],
+        'Insurance': ['insurance', 'coverage', 'liability', 'no-fault'],
+        'Violations': ['DUI', 'violation', 'suspended', 'revoked', 'ticket', 'offense'],
+        'Vehicle Operation': ['drive', 'driving', 'vehicle', 'operation', 'operate'],
+    }
+    
+    # Convert question to lowercase for matching
+    question_lower = question.lower()
+    
+    # Check each topic's keywords
+    for topic, keywords in topics.items():
+        if any(keyword.lower() in question_lower for keyword in keywords):
+            return topic
+    
+    return "General Knowledge"
 
 @st.cache_data
 def load_quiz_data() -> List[dict]:
@@ -40,11 +76,16 @@ def load_quiz_data() -> List[dict]:
             reader = csv.DictReader(file)
             for row in reader:
                 try:
+                    # Determine topic first for explanation generation
+                    topic = categorize_question(row['Question'])
+                    
                     # Format question data
                     question = {
                         'question': row['Question'],
                         'options': [row['Option A'], row['Option B'], row['Option C'], row['Option D']],
-                        'correct_answer': row['Correct Answer']
+                        'correct_answer': row['Correct Answer'],
+                        'topic': topic,
+                        'explanation': generate_explanation(row['Question'], row['Correct Answer'], topic)
                     }
                     # Ensure options are properly formatted
                     question['options'] = [opt.strip() if opt is not None else '' for opt in question['options']]

@@ -7,6 +7,7 @@ def start_new_quiz(quiz_data, total_questions):
     st.session_state.score = 0
     st.session_state.current_question = 0
     st.session_state.answered_correctly = set()
+    st.session_state.incorrect_questions = []
     
     # Clear previous question options
     for key in list(st.session_state.keys()):
@@ -41,10 +42,30 @@ def handle_quiz_end(total_questions, min_correct, pass_percentage):
     else:
         st.error(f"❌ Quiz failed. Score: {score}/{total_questions} ({percentage:.1f}%). Required: {pass_percentage}%")
     
+    # Add Review Mistakes section with explanations
+    if st.session_state.incorrect_questions:
+        st.subheader("Review Incorrect Answers")
+        for idx, question in enumerate(st.session_state.incorrect_questions):
+            with st.expander(f"Question {idx + 1}: {question['question']}", expanded=False):
+                col1, col2 = st.columns(2)
+                with col1:
+                    st.write("Your Answer:", question['user_answer'])
+                    st.write("Correct Answer:", question['correct_answer'])
+                with col2:
+                    st.write("Topic:", question['topic'])
+                
+                st.markdown("---")
+                st.markdown("### Explanation")
+                st.write(question['explanation'])
+                
+                # Add study tip based on topic
+                st.info(f"📚 Study Tip: Review the section on {question['topic']} in the Minnesota Driver's Manual.")
+    
     if st.button("Restart Quiz"):
         st.session_state.current_question = 0
         st.session_state.score = 0
         st.session_state.answered_correctly = set()
+        st.session_state.incorrect_questions = []
         st.rerun()
 
 def save_score(score, total_questions):
