@@ -1,56 +1,133 @@
+"""Main Streamlit application for Minnesota Driver's Quiz."""
 import streamlit as st
-import random
-from quiz_loader import load_quiz_data
-from session_state import init_session_state
+from quiz_utils import (
+    initialize_quiz_state,
+    get_current_question,
+    load_user_progress,
+    reset_quiz
+)
 from question_display import display_question
-from quiz_utils import start_new_quiz, display_score, handle_quiz_end, save_score, display_history
 
 def main():
-    st.set_page_config(page_title="Driver's Manual Quiz", page_icon="🚗")
-    st.title("Minnesota Driver's Manual Quiz")
+    # Set page config
+    st.set_page_config(
+        page_title="Minnesota Driver's License Quiz",
+        page_icon="🚗",
+        layout="wide"
+    )
     
-    # Constants for quiz parameters
-    TOTAL_QUESTIONS = 40
-    PASS_PERCENTAGE = 80
-    MIN_CORRECT = int(TOTAL_QUESTIONS * PASS_PERCENTAGE / 100)
+    # Add custom CSS
+    st.markdown("""
+        <style>
+        .stProgress > div > div > div > div {
+            background-color: #4CAF50;
+        }
+        .stButton>button {
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            border: none;
+            padding: 10px 24px;
+        }
+        .stButton>button:hover {
+            background-color: #45a049;
+        }
+        .reportform {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+        </style>
+    """, unsafe_allow_html=True)
     
-    init_session_state({
-        'score': 0,
-        'current_question': 0,
-        'questions': [],
-        'answered_correctly': set(),
-        'history': []
-    })
+    # Main title with emoji
+    st.title("🚗 Minnesota Driver's License Quiz")
     
-    quiz_data = load_quiz_data()
-    if not quiz_data:
-        st.error("No quiz data found. Please check the data directory.")
+    # Initialize quiz state
+    initialize_quiz_state()
+    
+    # Load progress
+    progress = load_user_progress()
+    total_questions = len(st.session_state.questions) if hasattr(st.session_state, 'questions') else 0
+    
+    # Safety check for total_questions
+    if total_questions == 0:
+        st.error("No questions loaded. Please check the quiz data.")
+        if st.button("Retry Loading Questions"):
+            st.session_state.clear()
+            st.rerun()
         return
-    
-    if len(quiz_data) < TOTAL_QUESTIONS:
-        st.error(f"Not enough questions in the quiz data. Found {len(quiz_data)} questions, but need at least {TOTAL_QUESTIONS}.")
-        return
-    
-    if st.button("Start New Quiz"):
-        start_new_quiz(quiz_data, TOTAL_QUESTIONS)
-        st.rerun()
-
-    # Display current score and passing requirements
-    if st.session_state.questions:
-        display_score(TOTAL_QUESTIONS, MIN_CORRECT)
         
-        current_q_idx = st.session_state.current_question
-        if current_q_idx < TOTAL_QUESTIONS:
-            current_q = st.session_state.questions[current_q_idx]
-            display_question(current_q, current_q_idx, TOTAL_QUESTIONS)
-        else:
-            handle_quiz_end(TOTAL_QUESTIONS, MIN_CORRECT, PASS_PERCENTAGE)
-            save_score(st.session_state.score, TOTAL_QUESTIONS)
-    else:
-        st.info("Please start a new quiz to begin.")
+    # Initialize current_question if not present
+    if 'current_question' not in st.session_state:
+        st.session_state.current_question = 0
     
-    # Display quiz history
-    display_history()
+    answered_correctly = len(progress['correct_questions']) if progress else 0
+    
+    # Create a container for metrics
+    with st.container():
+        # Display progress metrics in columns
+        col1, col2, col3 = st.columns(3)
+        with col1:
+            st.metric("Current Score", f"{st.session_state.score}/{total_questions}")
+        with col2:
+            st.metric("Questions Mastered", f"{answered_correctly}/{total_questions}")
+        with col3:
+            remaining = total_questions - answered_correctly
+            st.metric("Questions Remaining", str(remaining))
+        
+        # Display progress bar with safety checks
+        progress_percentage = min((st.session_state.current_question / total_questions) * 100, 100) if total_questions > 0 else 0
+        st.progress(progress_percentage / 100)
+    
+    # Create main content container
+    main_container = st.container()
+    
+    with main_container:
+        # Get and display current question
+        current_question = get_current_question()
+        if current_question:
+            display_question(current_question, st.session_state.current_question, total_questions)
+        else:
+            # Quiz completion screen
+            st.success("🎉 Congratulations! You've completed the quiz!")
+            st.balloons()
+            
+            # Show final score and stats
+            final_score = st.session_state.score
+            score_percentage = (final_score / total_questions) * 100
+            
+            st.markdown(f"""
+                ### Final Results
+                - **Score**: {final_score}/{total_questions}
+                - **Percentage**: {score_percentage:.1f}%
+                - **Questions Mastered**: {answered_correctly}/{total_questions}
+            """)
+            
+            # Add encouraging message based on score
+            if score_percentage >= 80:
+                st.success("🌟 Excellent work! You're well prepared for your driver's license test!")
+            elif score_percentage >= 70:
+                st.info("👍 Good job! With a bit more practice, you'll be fully prepared!")
+            else:
+                st.warning("📚 Keep practicing! Review the questions you missed and try again.")
+            
+            # Restart quiz button
+            if st.button("Start New Quiz", use_container_width=True):
+                reset_quiz()
+                st.rerun()
+    
+    # Add footer
+    st.markdown("---")
+    st.markdown(
+        """
+        <div style='text-align: center'>
+        <p>Made with ❤️ for Minnesota Drivers</p>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
 if __name__ == "__main__":
     main()

@@ -4,95 +4,139 @@ import random
 from typing import List, Dict, Any, Optional, Tuple
 from datetime import datetime
 import os
+import csv
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+import json
+from pathlib import Path
 
-from features.error_reporting import error_reporter
-from features.bookmarking import bookmark_manager
-from features.explanation import explanation_generator
-from features.topic_categorizer import topic_categorizer
+from quiz_loader import load_quiz_data as load_csv_quiz_data
+
+def load_quiz_data():
+    """Load quiz data from CSV file."""
+    try:
+        quiz_data = load_csv_quiz_data()
+        if not quiz_data:
+            st.error("No questions found in the quiz bank.")
+            return []
+        return quiz_data
+    except Exception as e:
+        st.error(f"Error loading quiz data: {str(e)}")
+        return []
+
+def load_user_progress():
+    """Load user's question history and progress."""
+    try:
+        progress_file = Path("user_progress.json")
+        if progress_file.exists():
+            with open(progress_file, 'r') as f:
+                return json.load(f)
+        return {'correct_questions': [], 'incorrect_questions': []}
+    except Exception as e:
+        st.error(f"Error loading progress: {str(e)}")
+        return {'correct_questions': [], 'incorrect_questions': []}
+
+def save_user_progress(progress):
+    """Save user's question history and progress."""
+    try:
+        with open("user_progress.json", 'w') as f:
+            json.dump(progress, f)
+    except Exception as e:
+        st.error(f"Error saving progress: {str(e)}")
 
 def initialize_quiz_state():
-    """Initialize quiz-related session state variables."""
+    """Initialize or reset quiz state."""
     if 'current_question' not in st.session_state:
         st.session_state.current_question = 0
+    
     if 'score' not in st.session_state:
         st.session_state.score = 0
-    if 'answered_correctly' not in st.session_state:
-        st.session_state.answered_correctly = set()
-    if 'incorrect_questions' not in st.session_state:
-        st.session_state.incorrect_questions = []
-    if 'practice_mode' not in st.session_state:
-        st.session_state.practice_mode = False
+    
+    if 'questions' not in st.session_state:
+        questions = load_quiz_data()
+        if questions:
+            st.session_state.questions = questions
+            # Shuffle questions for variety
+            random.shuffle(st.session_state.questions)
+        else:
+            st.error("Failed to load quiz questions. Please check the quiz data file.")
+            st.session_state.questions = []
 
-def get_current_question() -> Optional[Dict[str, Any]]:
+def get_current_question():
     """Get the current question based on quiz state."""
-    if st.session_state.practice_mode and hasattr(st.session_state, 'practice_questions'):
-        questions = st.session_state.practice_questions
-    elif hasattr(st.session_state, 'questions'):
-        questions = st.session_state.questions
-    else:
+    if not hasattr(st.session_state, 'questions') or not st.session_state.questions:
         return None
     
-    if 0 <= st.session_state.current_question < len(questions):
-        return questions[st.session_state.current_question]
-    return None
+    if st.session_state.current_question >= len(st.session_state.questions):
+        return None
+        
+    return st.session_state.questions[st.session_state.current_question]
 
-def handle_answer(selected_answer: str, question_data: Dict[str, Any]) -> bool:
-    """Process user's answer and update quiz state."""
-    is_correct = selected_answer == question_data['correct_answer']
-    current_q = st.session_state.current_question
+def handle_answer(question_data: Dict[str, Any], user_answer: str):
+    """Process user's answer and update progress."""
+    progress = load_user_progress()
+    correct = user_answer == question_data['correct_answer']
     
-    if is_correct:
+    if correct:
         st.session_state.score += 1
-        st.session_state.answered_correctly.add(current_q)
+        if question_data['question'] not in progress['correct_questions']:
+            progress['correct_questions'].append(question_data['question'])
     else:
-        st.session_state.incorrect_questions.append({
-            'question': question_data['question'],
-            'user_answer': selected_answer,
-            'correct_answer': question_data['correct_answer']
-        })
+        if question_data['question'] not in progress['incorrect_questions']:
+            progress['incorrect_questions'].append(question_data['question'])
     
-    return is_correct
+    save_user_progress(progress)
+    st.session_state.current_question += 1
+    return correct
 
-def handle_error_report(question_data: Dict[str, Any], user_report: str, contact_email: Optional[str] = None) -> Tuple[bool, str]:
+def handle_error_report(question_data: Dict[str, Any], user_report: str, contact_email: Optional[str] = None):
     """Handle submission of error report."""
     try:
-        return error_reporter.send_error_report(question_data, user_report, contact_email)
+        send_error_report(question_data, user_report, contact_email)
+        return True
     except Exception as e:
-        st.error(f"Failed to send error report: {str(e)}")
-        return False, "Error report could not be sent. Please try again later."
+        st.error(f"Error submitting report: {str(e)}")
+        return False
 
-def get_quiz_summary() -> Dict[str, Any]:
+def get_quiz_summary():
     """Generate summary of quiz performance."""
     total_questions = len(st.session_state.questions)
+    score = st.session_state.score
+    percentage = (score / total_questions * 100) if total_questions > 0 else 0
     return {
-        'score': st.session_state.score,
-        'total': total_questions,
-        'percentage': (st.session_state.score / total_questions) * 100 if total_questions > 0 else 0,
-        'incorrect_questions': st.session_state.incorrect_questions
+        'total_questions': total_questions,
+        'score': score,
+        'percentage': percentage
     }
 
 def reset_quiz():
     """Reset quiz state for a new attempt."""
+    if 'questions' in st.session_state:
+        random.shuffle(st.session_state.questions)
     st.session_state.current_question = 0
     st.session_state.score = 0
-    st.session_state.answered_correctly = set()
-    st.session_state.incorrect_questions = []
-    st.session_state.practice_mode = False
 
-def start_new_quiz(quiz_data, total_questions):
-    selected_questions = random.sample(quiz_data, total_questions)
-    st.session_state.questions = selected_questions
-    st.session_state.score = 0
-    st.session_state.current_question = 0
-    st.session_state.answered_correctly = set()
-    st.session_state.incorrect_questions = []
-    
-    # Clear previous question options
-    for key in list(st.session_state.keys()):
-        if key.startswith('options_') or key.startswith('correct_'):
-            del st.session_state[key]
+def send_error_report(question_data: dict, user_report: str, contact_email: str = None):
+    """Send error report via email using Gmail SMTP."""
+    try:
+        # Create report content
+        report_content = f"""
+        Question: {question_data['question']}
+        Options: {', '.join(question_data['options'])}
+        Correct Answer: {question_data['correct_answer']}
+        User Report: {user_report}
+        Contact Email: {contact_email if contact_email else 'Not provided'}
+        Timestamp: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
+        """
+        
+        # Log the error report
+        with open('error_reports.log', 'a') as f:
+            f.write(f"\n{'='*50}\n{report_content}\n")
+            
+        return True
+    except Exception as e:
+        st.error(f"Error saving report: {str(e)}")
+        return False
 
 def display_score(total_questions, min_correct):
     current_score = st.session_state.score
@@ -194,46 +238,15 @@ def display_history():
         for idx, entry in enumerate(st.session_state.history):
             st.sidebar.write(f"Quiz {idx + 1}: {entry['score']}/{entry['total_questions']} ({entry['percentage']:.1f}%)")
 
-def send_error_report(question_data: dict, user_report: str, contact_email: str = None):
-    """Send error report via email using Gmail SMTP"""
-    ADMIN_EMAIL = "remixonwin@gmail.com"
+def start_new_quiz(quiz_data, total_questions):
+    selected_questions = random.sample(quiz_data, total_questions)
+    st.session_state.questions = selected_questions
+    st.session_state.score = 0
+    st.session_state.current_question = 0
+    st.session_state.answered_correctly = set()
+    st.session_state.incorrect_questions = []
     
-    # Format the error report
-    report_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    report_content = f"""
-Error Report - Minnesota Driving Quiz
-Time: {report_time}
-
-Question Information:
--------------------
-Question: {question_data['question']}
-Current Answer: {question_data['correct_answer']}
-Current Explanation: {question_data['explanation']}
-Topic: {question_data['topic']}
-
-User Report:
------------
-{user_report}
-
-User Contact (optional):
-----------------------
-{contact_email if contact_email else 'Not provided'}
-"""
-    
-    try:
-        # Save to a local file as backup
-        report_file = f"error_reports/report_{report_time.replace(':', '-')}.txt"
-        os.makedirs("error_reports", exist_ok=True)
-        with open(report_file, "w") as f:
-            f.write(report_content)
-        
-        # Create message
-        msg = MIMEMultipart()
-        msg['From'] = ADMIN_EMAIL
-        msg['To'] = ADMIN_EMAIL
-        msg['Subject'] = f"Quiz Error Report - {report_time}"
-        msg.attach(MIMEText(report_content, 'plain'))
-        
-        return True, "Error report saved successfully! Thank you for helping improve the quiz."
-    except Exception as e:
-        return False, f"Could not save error report. Please try again later. Error: {str(e)}"
+    # Clear previous question options
+    for key in list(st.session_state.keys()):
+        if key.startswith('options_') or key.startswith('correct_'):
+            del st.session_state[key]

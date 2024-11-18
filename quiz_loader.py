@@ -1,7 +1,6 @@
 """Quiz data loading and processing functionality."""
 import csv
 from pathlib import Path
-import streamlit as st
 import logging
 import unicodedata
 from typing import List, Dict, Any, Optional
@@ -44,112 +43,56 @@ def clean_text(text: Optional[str]) -> str:
     
     return text
 
-def generate_explanation(question: str, correct_answer: str, topic: str) -> str:
-    """Generate an explanation for the correct answer based on context"""
-    
-    # Common explanation patterns based on question type
-    explanations = {
-        'Licensing': {
-            'pattern': r'(minimum|required|valid|fee)',
-            'template': "According to Minnesota Driver's Manual, {} is the correct requirement for {}."
-        },
-        'Rules and Regulations': {
-            'pattern': r'(must|required|legal|law)',
-            'template': "Minnesota law states that {} regarding {}."
-        },
-        'Road Signs': {
-            'pattern': r'sign|signal',
-            'template': "This traffic control device indicates {}. It's important to {} for road safety."
-        },
-        'Safety': {
-            'pattern': r'safety|emergency|caution',
-            'template': "For safety reasons, {} is the correct action when {}."
-        }
-    }
-    
-    # Clean up the question and answer
-    q_lower = question.lower()
-    
-    # Try to match topic-specific patterns
-    if topic in explanations:
-        pattern = explanations[topic]['pattern']
-        if re.search(pattern, q_lower):
-            # Extract relevant parts of the question
-            context = re.sub(r'^what (is|should|must|does)|[?]', '', q_lower).strip()
-            return explanations[topic]['template'].format(correct_answer, context)
-    
-    # Default explanation if no pattern matches
-    return f"The correct answer is {correct_answer}. This is based on Minnesota driving regulations and safety guidelines."
-
-def categorize_question(question: str) -> str:
-    """Categorize questions based on content analysis"""
-    # Define topic keywords
-    topics = {
-        'Licensing': ['license', 'permit', 'renewal', 'application', 'fee', 'valid', 'provisional', 'duplicate'],
-        'Rules and Regulations': ['law', 'legal', 'requirement', 'required', 'must', 'penalty', 'consequence'],
-        'Road Signs': ['sign', 'signal', 'yield', 'turn', 'crossing', 'arrow'],
-        'Safety': ['safety', 'accident', 'crash', 'emergency', 'caution', 'danger'],
-        'Traffic Laws': ['traffic', 'speed', 'right of way', 'lane', 'merge', 'stop'],
-        'Insurance': ['insurance', 'coverage', 'liability', 'no-fault'],
-        'Violations': ['DUI', 'violation', 'suspended', 'revoked', 'ticket', 'offense'],
-        'Vehicle Operation': ['drive', 'driving', 'vehicle', 'operation', 'operate'],
-    }
-    
-    # Convert question to lowercase for matching
-    question_lower = question.lower()
-    
-    # Check each topic's keywords
-    for topic, keywords in topics.items():
-        if any(keyword.lower() in question_lower for keyword in keywords):
-            return topic
-    
-    return "General Knowledge"
-
-def validate_question(row: Dict[str, str]) -> Optional[Dict[str, Any]]:
-    """Validate and clean question data."""
+def remove_duplicates_from_csv():
+    """Remove duplicate questions from the quiz bank."""
     try:
-        # Clean all text fields
-        question = clean_text(row.get('Question'))
-        correct_answer = clean_text(row.get('Correct Answer'))
-        options = [
-            clean_text(row.get('Option A')),
-            clean_text(row.get('Option B')),
-            clean_text(row.get('Option C')),
-            clean_text(row.get('Option D'))
-        ]
+        # Read all questions
+        questions = []
+        seen_questions = set()
+        duplicates_found = False
         
-        # Validate required fields silently
-        if not question or not correct_answer:
-            logger.error(f"Invalid question: Missing question or correct answer")
-            return None
+        with open("Minnesota_Driving_Quiz.csv", 'r', encoding='utf-8') as file:
+            reader = csv.DictReader(file)
+            headers = reader.fieldnames
             
-        # Remove empty options and ensure we have at least 2 options
-        options = [opt for opt in options if opt]
-        if len(options) < 2:
-            logger.error(f"Invalid question: Not enough valid options")
-            return None
+            # First row is headers
+            questions.append(",".join(headers))
             
-        # Ensure correct answer is in options
-        if correct_answer not in options:
-            logger.error(f"Invalid question: Correct answer not in options")
-            # Add correct answer to options if missing
-            options.append(correct_answer)
-            
-        # Determine topic
-        topic = categorize_question(question)
+            for row in reader:
+                # Clean the question text
+                question = clean_text(row['Question']).lower().strip()
+                
+                # If we haven't seen this question before, add it
+                if question not in seen_questions:
+                    seen_questions.add(question)
+                    # Preserve the original format with quotes and commas
+                    row_values = [
+                        f'"{row["Question"]}"' if ',' in row["Question"] else row["Question"],
+                        row["Option A"],
+                        row["Option B"],
+                        row["Option C"],
+                        row["Option D"],
+                        row["Correct Answer"]
+                    ]
+                    questions.append(",".join(row_values))
+                else:
+                    duplicates_found = True
+                    print(f"Duplicate found: {row['Question']}")
         
-        return {
-            'question': question,
-            'options': options,
-            'correct_answer': correct_answer,
-            'topic': topic,
-            'explanation': generate_explanation(question, correct_answer, topic)
-        }
+        if duplicates_found:
+            # Write back the deduplicated questions
+            with open("Minnesota_Driving_Quiz.csv", 'w', encoding='utf-8', newline='') as file:
+                for line in questions:
+                    file.write(line + '\n')
+            
+            return True, "Duplicates removed successfully"
+        
+        return False, "No duplicates found"
+        
     except Exception as e:
-        logger.error(f"Error processing question: {str(e)}")
-        return None
+        print(f"Error removing duplicates: {str(e)}")
+        return False, f"Error: {str(e)}"
 
-@st.cache_data
 def load_quiz_data() -> List[dict]:
     """Load quiz data from CSV and convert to proper format"""
     quiz_data = []
@@ -189,3 +132,57 @@ def load_quiz_data() -> List[dict]:
         ]
     
     return quiz_data
+
+def validate_question(row: Dict[str, str]) -> Optional[Dict[str, Any]]:
+    """Validate and clean question data."""
+    try:
+        # Clean all text fields
+        question = clean_text(row.get('Question'))
+        options = [
+            clean_text(row.get('Option A', '')),
+            clean_text(row.get('Option B', '')),
+            clean_text(row.get('Option C', '')),
+            clean_text(row.get('Option D', ''))
+        ]
+        correct_answer = clean_text(row.get('Correct Answer', ''))
+        
+        # Filter out empty options
+        options = [opt for opt in options if opt]
+        
+        # Validate required fields
+        if not question:
+            logger.error(f"Missing question text")
+            return None
+            
+        if not options or len(options) < 2:
+            logger.error(f"Not enough valid options for question: {question}")
+            return None
+            
+        if not correct_answer:
+            logger.error(f"Missing correct answer for question: {question}")
+            return None
+            
+        if correct_answer not in options:
+            # Try to find the correct answer in the options (case-insensitive)
+            correct_answer_lower = correct_answer.lower()
+            matching_options = [opt for opt in options if opt.lower() == correct_answer_lower]
+            if matching_options:
+                correct_answer = matching_options[0]
+            else:
+                # Add correct answer to options if it's valid
+                if correct_answer.strip():
+                    options.append(correct_answer)
+                else:
+                    logger.error(f"Correct answer not found in options for question: {question}")
+                    return None
+            
+        return {
+            'question': question,
+            'options': options,
+            'correct_answer': correct_answer,
+            'topic': 'General Knowledge'  # Default topic
+        }
+        
+    except Exception as e:
+        logger.error(f"Error validating question: {str(e)}")
+        return None

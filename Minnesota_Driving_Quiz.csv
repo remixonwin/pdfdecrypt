@@ -1,25 +1,11 @@
 Question,Option A,Option B,Option C,Option D,Correct Answer
-"What is the increased fee for driver’s licenses as of July 1, 2023?",$5.50,$6.75,$8.00,$7.25,
+"What is the increased fee for driver's licenses as of July 1, 2023?",$5.50,$6.75,$8.00,$7.25,$8.00
 "As of October 1, 2023, what is the filing fee for a renewal application?",$10,$12,$11,$13,$11
-What is the 'Driver’s License for All' law?,Allows any resident to apply for a REAL ID,Permits all Minnesotans to obtain a driver’s license regardless of immigration status,Eliminates the need for a written test for new residents,Introduces stricter residency requirements for licenses,Permits all Minnesotans to obtain a driver’s license regardless of immigration status
-What score is required to pass the Minnesota written driving test?,70%,75%,80%,85%,80%
-How many written tests can you take in one day?,One,Two,Three,Unlimited,One
-What must a person under 18 present to take the written test?,Proof of vehicle insurance,A 'White Card' from a behind-the-wheel course,A 'Blue Card' or 'Pink Card' from an approved driver education course,A parent’s signed consent form,A 'Blue Card' or 'Pink Card' from an approved driver education course
-What is the fee for taking a third road test after failing twice?,$10,$15,$20,$25,$20
-Which of the following actions would cause immediate failure during a road test?,Driving 5 mph over the speed limit,Failing to parallel park properly,Disobeying a traffic law,Forgetting to signal a turn,Disobeying a traffic law
-How long is an instruction permit valid in Minnesota?,One year,Two years,Three years,Six months,Two years
-What restrictions apply to drivers under 18 with an instruction permit?,They cannot drive at night,They must have a licensed driver aged 21 or older in the front passenger seat,They cannot use cruise control,They cannot exceed 50 mph,They must have a licensed driver aged 21 or older in the front passenger seat
-What are the nighttime driving restrictions during the first six months of holding a provisional license?,No driving after 9:00 PM,No driving after midnight,No driving after 10:00 PM,No driving after 5:00 AM,No driving after midnight
-How many hours of supervised driving are required if the parent does not attend the supplemental parent class?,"40 hours, 10 of which are nighttime hours","50 hours, 10 of which are nighttime hours","50 hours, 15 of which are nighttime hours","40 hours, 15 of which are nighttime hours","50 hours, 15 of which are nighttime hours"
-What must an unlicensed teen driver do to regain their driving privileges under Vanessa’s Law?,Complete 40 hours of supervised driving,Pay reinstatement fees and hold an instruction permit for six months,Retake the road test only,Attend a defensive driving course,Pay reinstatement fees and hold an instruction permit for six months
-At what age can a driver affected by Vanessa’s Law apply for a full driver’s license?,16,17,18,21,18
-What is the minimum depth required for tire treads to be legal?,1/8 inch,1/16 inch,1/4 inch,3/16 inch,1/16 inch
-What conditions must a windshield and windows meet to ensure visibility?,Free from cracks and cleaned once a month,"Free from cracks, discoloration, frost, and snow",Treated with reflective material,Properly tinted for safety,"Free from cracks, discoloration, frost, and snow"
-What document must you bring when applying for a REAL ID?,Two proofs of residency,"One document proving identity, date of birth, and legal presence",Proof of vehicle insurance,A Social Security Card,"One document proving identity, date of birth, and legal presence"
+What is the 'Driver's License for All' law?,Allows any resident to apply for a REAL ID,Permits all Minnesotans to obtain a driver's license regardless of immigration status,Eliminates the need for a written test,Introduces stricter residency requirements,Permits all Minnesotans to obtain a driver's license regardless of immigration status
 What is the minimum vision standard required to pass the vision screening?,20/30,20/50,20/40,20/20,20/40
-"If your Minnesota driver’s license has been expired for more than one year but less than five years,what must you do to renew it?",Only pay the renewal fee,Pass a vision test and a written test,Retake the road test,Submit proof of insurance,
+"If your Minnesota driver’s license has been expired for more than one year but less than five years,what must you do to renew it?",Only pay the renewal fee,Pass a vision test and a written test,Retake the road test,Submit proof of insurance,Pass a vision test and a written test
 At what age can you apply for a restricted farm work driver’s license?,16,14,15,17,15
-What must you do if you change your name or address before your license expires?,Notify the Department of Public Safety within 60 days,Apply for a duplicate license within 30 days,Renew your license immediately,"Nothing, changes are updated automatically",Apply for a duplicate license within 30 days
+What must you do if you change your name or address before your license expires?,Notify the Department of Public Safety within 60 days,Apply for a duplicate license within 30 days,Renew your license immediately,"Nothing, changes are updated automatically",Notify the Department of Public Safety within 60 days
 What must you do before you can take the road test?,Complete the online pre-application form,Schedule an appointment,Provide proof of vehicle insurance,All of the above,All of the above
 What is the maximum number of passengers under 20 allowed during the second six months of a provisional license?,One,Two,Three,Unlimited,Three
 What does the GDL system stand for?,General Driver Licensing,Graduated Driver’s Licensing,General Driving Laws,Government Driving Licenses,Graduated Driver’s Licensing
@@ -35,7 +21,7 @@ What is the purpose of the instruction permit?,To allow unsupervised driving,To 
 How much is the fee to retake the written test after failing twice?,$5,$10,$15,$20,$10
 What type of vehicle is not allowed during a road test?,SUVs,Rental vehicles,Neighborhood electric vehicles,Sedans,Neighborhood electric vehicles
 What must you do if your vision does not meet the screening requirements?,Retake the test,See an eye doctor and submit a report,Provide proof of previous vision tests,None of the above,See an eye doctor and submit a report
-What must you present before taking the road test?,Instruction permit and proof of insurance,Vision test results,Vehicle registration,Birth certificate,Instruction permit and proof of insurance
+What must you present before taking the road test?,Valid instruction permit,Proof of insurance,Registered vehicle,All of the above,All of the above
 How many hours of supervised driving must you log before applying for a provisional license?,20 hours,30 hours,50 hours,40 hours,50 hours
 What is the minimum peripheral vision required to pass the vision test?,95 degrees,100 degrees,105 degrees,110 degrees,105 degrees
 What is the purpose of the GDL system?,To ease new drivers into the driving environment,To bypass written tests,To allow unsupervised driving at a younger age,To reduce license fees for minors,To ease new drivers into the driving environment
@@ -45,43 +31,6 @@ What does the instruction permit allow you to do?,Drive unsupervised,Drive with 
 What is the fee for a duplicate license if you change your address?,$5,$10,$15,$20,$10
 How long does an instruction permit remain valid?,1 year,2 years,6 months,4 years,2 years
 Who must sign the license application for a minor?,A licensed driving instructor,"A parent, guardian, or foster parent",A school administrator,No signature is required,"A parent, guardian, or foster parent"
-What restrictions apply during the first six months of holding a provisional license?,No driving after midnight,Only one passenger under age 20 unless accompanied by a parent,No use of cell phones while driving,All of the above,All of the above
-What is Vanessa’s Law?,A law allowing 16-year-olds to drive unsupervised,A law penalizing teen drivers for alcohol-related offenses,A law eliminating the need for road tests,A law granting reduced license fees for teens,A law penalizing teen drivers for alcohol-related offenses
-What must you do before applying for a REAL ID?,Pass a vision test,Provide two proofs of Minnesota residency,Schedule a written test,Present proof of vehicle insurance,Provide two proofs of Minnesota residency
-What is the penalty for driving in excess of 100 mph in Minnesota?,A $100 fine,Revocation of driving privileges for six months,A written warning,An additional road test,Revocation of driving privileges for six months
-What happens if you fail the written test twice?,You must pay $10 for the third attempt,You are disqualified from applying for a license,You must take a driving course,You must wait six months before retaking the test,You must pay $10 for the third attempt
-What is the minimum age to obtain a motorized bicycle permit?,14,15,16,17,14
-What document is required for a teen applying for a farm work license?,Property tax statement,Medical certificate,Birth certificate,Vision test results,Property tax statement
-What is required to legally operate a motor vehicle in Minnesota?,A valid driver’s license,Proof of insurance,Vehicle registration,All of the above,All of the above
-What is the minimum number of hours of supervised driving required for a teen if a parent does not attend the supplemental class?,30 hours,50 hours,20 hours,10 hours,50 hours
-What are the vision requirements for passing the vision test in Minnesota?,20/40 vision with 105 degrees peripheral,20/50 vision with 110 degrees peripheral,20/30 vision with 100 degrees peripheral,20/20 vision with 95 degrees peripheral,20/40 vision with 105 degrees peripheral
-What is the minimum age to obtain a provisional license in Minnesota?,15,16,17,18,16
-How long must you hold a provisional license before upgrading to a full license if you are under 21?,6 months,12 months,18 months,24 months,12 months
-What is one requirement for obtaining a provisional license?,No moving violations,Completion of a written test,Completion of a vision test,All of the above,All of the above
-What happens if you receive a moving violation while holding a provisional license?,You can still upgrade to a full license,You must wait an additional 6 months,You will lose your provisional license,You must complete a driver education course,You must wait an additional 6 months
-What is the consequence of having a conviction for an alcohol violation while holding a provisional license?,You can still upgrade to a full license,You must wait an additional 12 months,You will lose your provisional license,You must complete a defensive driving course,You must wait an additional 12 months
-What type of license will you receive if you are under 21 years of age?,Full license,Provisional license,Under-21 license,Restricted license,Under-21 license
-How often must you renew your driver's license if you are under 21?,Every year,Every two years,Every four years,Every five years,Every four years
-What is required to apply for a new license after holding a provisional license?,A written test,A road test,A vision test,Completion of a driver education course,A vision test
-What is the purpose of the Supervised Driving Log?,To track hours of driving experience,To document vehicle maintenance,To record traffic violations,To list emergency contacts,To track hours of driving experience
-What must be included in the application for a driver's license?,Proof of residency,Proof of identity,Proof of completion of driver education,All of the above,All of the above
-What is the maximum number of moving violations allowed before you cannot upgrade from a provisional license?,1,2,3,4,2
-What is the fee for upgrading from a provisional license to a full license?,$5,$10,$20,It varies by location,$10
-What must you do if you are diagnosed with a medical condition that affects your driving?,Ignore it,Inform the Driver and Vehicle Services,Stop driving immediately,Consult a lawyer,Inform the Driver and Vehicle Services
-What is the consequence of providing false information on your driver's license application?,A warning,A fine,Loss of driving privileges,No consequence,Loss of driving privileges
-What is the minimum number of hours of behind-the-wheel instruction required for a provisional license?,10 hours,20 hours,30 hours,40 hours,30 hours
-What should you do if you have a medical condition that could cause loss of consciousness?,Continue driving,Submit a statement from a physician,Wait until the condition improves,Inform your friends,Submit a statement from a physician
-What is the purpose of the Driver Evaluation Unit?,To issue licenses,To evaluate medical conditions affecting driving,To conduct road tests,To provide driver education,To evaluate medical conditions affecting driving
-What is the requirement for a restricted farm work driver’s license?,Must be at least 15 years old,Must complete a driver education course,Must be employed on a farm,All of the above,All of the above
-What is the maximum distance a restricted farm work driver can drive from their farmhouse?,20 miles,30 miles,40 miles,50 miles,30 miles
-What must be presented to obtain a farm work driver’s license?,A property tax statement,A rental agreement,A completed form from the parent or guardian,All of the above,All of the above
-What is the minimum age to apply for a Class D driver's license in Minnesota?,15,16,17,18,16
-How long is a Minnesota driver's license valid after issuance?,2 years,4 years,6 years,10 years,4 years
-What is required for a driver’s license renewal?,A vision test,A written test,A road test,No requirements,A vision test
-"If you lose your driver's license, what must you present to apply for a duplicate?",A birth certificate,Proper identification,A social security card,A utility bill,Proper identification
-What is the fee for a duplicate driver's license?,$5,$10,$15,$20,$10
-What is the minimum age to apply for a provisional license in Minnesota?,15,16,17,18,16
-How long must you hold an instruction permit before applying for a provisional license?,3 months,6 months,9 months,12 months,6 months
 What is the minimum age to apply for a full driver's license in Minnesota?,16,17,18,19,18
 What is the minimum age to apply for a motorcycle instruction permit?,14,15,16,18,16
 What is the minimum age to apply for a motorcycle endorsement?,16,17,18,19,18
@@ -142,7 +91,7 @@ What is the purpose of a 'Stop' sign?,To indicate that you must stop completely,
 What should you do if you see a 'One Way' sign?,Drive in the direction of the arrow,Drive in the opposite direction,Ignore the sign,Change lanes,Drive in the direction of the arrow
 What is the purpose of the No-Fault Insurance law in Minnesota?,To provide free insurance,To ensure all drivers have insurance,To limit insurance claims,To reduce insurance premiums,To ensure all drivers have insurance
 What must you do if you are involved in a crash?,Leave the scene,Call your insurance agent,Exchange information with the other driver,Ignore it,Exchange information with the other driver
-What is the minimum amount of liability insurance required in Minnesota?,$25,000,b) $50,000,b) $50
+What is the minimum amount of liability insurance required in Minnesota?,$25,000,$50,000,$50,000,$50,000,$50,000
 What should you do if you receive a ticket?,Pay it immediately,Ignore it,Challenge it in court,Contact your insurance company,Challenge it in court
 What is the penalty for a first-time DUI offense in Minnesota?,Jail time,License suspension,Community service,All of the above,All of the above
 What is the purpose of the ignition interlock device?,To prevent drunk driving,To track mileage,To monitor speed,To reduce insurance costs,To prevent drunk driving
@@ -158,80 +107,6 @@ What should you do if your vehicle starts to skid?,Steer in the opposite directi
 What is the legal requirement for wearing seat belts in Minnesota?,Only for drivers,Only for passengers,For all occupants,Only for children,For all occupants
 What is the consequence of driving with a suspended license?,Fines,Additional suspension,Imprisonment,All of the above,All of the above
 What is the purpose of the Move Over law in Minnesota?,To allow emergency vehicles to pass,To protect emergency responders,To reduce traffic congestion,To increase speed limits,To protect emergency responders
-What should you do if you encounter a pedestrian at a crosswalk?,Speed up,Stop,Ignore them,Change lanes,Stop
-What is the minimum age to apply for a learner's permit in Minnesota?,15,16,17,18,15
-What is the purpose of the road test?,To assess driving skills,To evaluate knowledge of traffic laws,To check vision,To determine age,To assess driving skills
-What is the consequence of a second DUI offense in Minnesota?,Increased fines,Longer license suspension,Mandatory jail time,All of the above,All of the above
-What is the correct action when you see a yield sign?,Stop,Proceed without stopping,Slow down and yield to traffic,Speed up,Slow down and yield to traffic
-What is the legal requirement for headlights in Minnesota?,Must be on at all times,Only at night,Only in bad weather,Only during the day,Must be on at all times
-What should you do if you are being tailgated?,Speed up,Change lanes,Slow down,Brake suddenly,Change lanes
-What is the purpose of the No Parking sign?,To indicate a loading zone,To restrict parking,To allow parking,To indicate a bus stop,To restrict parking
-What is the consequence of driving without a valid license?,Fines,Imprisonment,Vehicle impoundment,All of the above,All of the above
-What is the correct action when you see a stop sign?,Slow down,Stop,Proceed with caution,Ignore it,Stop
-What is the minimum age to obtain a motorcycle license in Minnesota?,16,18,21,15,16
-What is the purpose of the Right Turn on Red law?,To allow right turns after stopping,To increase traffic flow,To reduce accidents,To allow left turns on red,To allow right turns after stopping
-What is the consequence of a third DUI offense in Minnesota?,Increased fines,Longer license suspension,Mandatory jail time,All of the above,All of the above
-What is the correct action when you see a construction zone?,Speed up,Slow down,Ignore it,Change lanes,Slow down
-What is the legal requirement for using a cell phone while driving in Minnesota?,Hands-free only,No restrictions,Only for emergency calls,Only for texting,Hands-free only
-What should you do if you encounter a flooded road?,Drive through it,Turn around,Speed up,Ignore it,Turn around
-What is the purpose of the No U-Turn sign?,To restrict U-turns,To allow U-turns,To indicate a one-way street,To indicate a stop,To restrict U-turns
-What is the consequence of driving with a revoked license?,Fines,Imprisonment,Vehicle impoundment,All of the above,All of the above
-What is the correct action when you see a pedestrian signal?,Ignore it,Proceed with caution,Stop,Speed up,Stop
-What is the minimum age to obtain a commercial driver's license in Minnesota?,18,21,16,15,18
-What does a red traffic light mean?,Stop,Proceed with caution,Go,Slow down,Stop
-What should you do when you see a yellow traffic light?,Speed up,Stop,Prepare to stop,Ignore it,Prepare to stop
-What does a green arrow indicate?,Stop,Go in the direction of the arrow,Proceed with caution,Turn left only,Go in the direction of the arrow
-What is the purpose of traffic signs?,To provide information,To control traffic,To warn drivers,All of the above,All of the above
-What does a yield sign mean?,Stop,Give way to traffic,Proceed with caution,Go,Give way to traffic
-What should you do if you miss your exit on the freeway?,Back up,Make a U-turn,Continue to the next exit,Stop,Continue to the next exit
-What is the correct action when approaching a roundabout?,Speed up,Stop,Yield to traffic,Turn left,Yield to traffic
-What is the purpose of lane markings?,To indicate lanes,To control traffic,To provide information,All of the above,All of the above
-What does a solid yellow line indicate?,Passing allowed,No passing allowed,Speed limit,Construction zone,No passing allowed
-What is the correct action when you see a school zone sign?,Speed up,Slow down,Ignore it,Stop,Slow down
-What does a blue traffic sign indicate?,Warning,Information,Regulation,Construction,Information
-What is the purpose of a no parking sign?,To restrict parking,To allow parking,To indicate a loading zone,To indicate a bus stop,To restrict parking
-What should you do if you see a pedestrian in the road?,Speed up,Stop,Ignore them,Change lanes,Stop
-What does a construction zone sign look like?,Orange and black,Red and white,Green and white,Blue and white,Orange and black
-What does a railroad crossing sign indicate?,No crossing,Proceed with caution,Stop,All of the above,Proceed with caution
-What is the purpose of a no U-turn sign?,To restrict U-turns,To allow U-turns,To indicate a one-way street,To indicate a stop,To restrict U-turns
-What should you do if you encounter a stopped school bus?,Speed up,Stop,Pass carefully,Ignore it,Stop
-What does a solid white line indicate?,No lane change allowed,Lane change allowed,Speed limit,Construction zone,No lane change allowed
-What should you do if you are driving in heavy rain?,Speed up,Slow down,Use high beams,Ignore it,Slow down
-What is the purpose of a speed limit sign?,To indicate maximum speed,To indicate minimum speed,To provide information,To control traffic,To indicate maximum speed
-What does a no left turn sign mean?,Left turn allowed,No left turn,Right turn only,All of the above,No left turn
-What is the correct action when you see a merge sign?,Speed up,Slow down,Prepare to merge,Ignore it,Prepare to merge
-What does a traffic circle sign indicate?,Roundabout ahead,Stop ahead,Yield ahead,No entry,Roundabout ahead
-What should you do if you see a pedestrian at a crosswalk?,Speed up,Stop,Ignore them,Change lanes,Stop
-What does a red arrow mean?,Stop,Proceed with caution,Go,Slow down,Stop
-What does a solid red light mean?,Stop,Proceed with caution,Go,Slow down,Stop
-What should you do if you see a construction zone sign?,Speed up,Slow down,Ignore it,Change lanes,Slow down
-What does a no entry sign mean?,Entry allowed,No entry,Proceed with caution,Stop,No entry
-What is the purpose of a traffic signal?,To control traffic flow,To provide information,To warn drivers,All of the above,To control traffic flow
-What should you do when you see a stop sign?,Come to a complete stop,Slow down,Proceed with caution,Ignore it,Come to a complete stop
-What does a yield sign indicate?,Give way to other vehicles,Stop immediately,Proceed without stopping,Speed up,Give way to other vehicles
-What does a solid yellow line mean?,No passing allowed,Passing allowed,Speed limit,Construction zone,No passing allowed
-What should you do if you see a pedestrian crossing sign?,Speed up,Stop,Ignore it,Proceed with caution,Stop
-What is the purpose of warning signs?,To alert drivers to potential hazards,To provide information,To control traffic,To indicate speed limits,To alert drivers to potential hazards
-What is the correct action when you see a traffic circle sign?,Speed up,Stop,Yield to traffic,Turn left,Yield to traffic
-What does a diamond-shaped sign indicate?,Warning,Regulation,Information,Construction,Warning
-What is the purpose of a handicapped parking sign?,To indicate reserved parking,To allow parking,To indicate a loading zone,To indicate a bus stop,To indicate reserved parking
-What should you do if you see a warning sign?,Speed up,Slow down,Ignore it,Proceed with caution,Proceed with caution
-What does a green arrow mean?,Stop,Go in the direction of the arrow,Proceed with caution,Turn left only,Go in the direction of the arrow
-What is the correct action when you see a no right turn sign?,Right turn allowed,No right turn,Left turn only,All of the above,No right turn
-What is the primary purpose of traffic signs?,To provide directions,To control traffic flow,To ensure safety,To inform drivers,To ensure safety
-What should you do when you see a yield sign?,Stop,Proceed without stopping,Slow down and yield to traffic,Speed up,Slow down and yield to traffic
-What does a no parking sign indicate?,Parking allowed,No parking,Loading zone,Bus stop,No parking
-What is the meaning of a green traffic light?,Go,Stop,Proceed with caution,Slow down,Go
-What does a yellow traffic light indicate?,Stop,Proceed with caution,Go,Slow down,Proceed with caution
-What is the purpose of a minimum speed limit sign?,To indicate the minimum speed allowed,To indicate maximum speed,To provide information,To control traffic,To indicate the minimum speed allowed
-What is the primary purpose of the Minnesota Driver's Manual?,To provide driving laws,To inform about traffic signs,To prepare for the driving test,To ensure road safety,To prepare for the driving test
-What should you do before driving?,Check your mirrors,Fasten your seatbelt,Adjust your seat,All of the above,All of the above
-What does a seatbelt do?,Prevents ejection,Reduces injury,Improves comfort,All of the above,All of the above
-What is the minimum age to obtain a learner's permit in Minnesota?,15,16,17,18,15
-What is the purpose of a learner's permit?,To practice driving,To drive alone,To take the driving test,To avoid traffic laws,To practice driving
-What should you do if you are involved in a crash?,Leave the scene,Call the police,Exchange information,All of the above,Call the police
-What is the correct hand position on the steering wheel?,10 and 2,9 and 3,8 and 4,12 and 6,9 and 3
-What is the purpose of the Move Over law?,To protect emergency workers,To increase speed limits,To reduce traffic,To allow parking,To protect emergency workers
 What should you do if you encounter a school bus with its lights flashing?,Speed up,Stop,Pass carefully,Ignore it,Stop
 What is the meaning of a yellow traffic light?,Stop,Proceed with caution,Go,Slow down,Proceed with caution
 What should you do if you see a yield sign?,Stop,Proceed without stopping,Slow down and yield to traffic,Speed up,Slow down and yield to traffic
@@ -268,7 +143,7 @@ What is the minimum following distance you should maintain behind another vehicl
 What does a yellow traffic light mean?,Stop immediately,Proceed with caution,Go faster,Prepare to turn,Proceed with caution
 What is the purpose of a roundabout?,To allow for faster traffic flow,To reduce accidents,To provide a place to stop,To allow for U-turns,To reduce accidents
 What is the maximum speed limit in urban areas in Minnesota?,25 mph,30 mph,35 mph,40 mph,30 mph
-What is the first thing you should do if your brakes fail?,Shift to a lower gear,Use the emergency brake,Steer off the road,Sound your horn,Use the emergency brake
+What should you do if your brakes fail?,Shift to a lower gear,Use the emergency brake,Steer off the road,Sound your horn,Use the emergency brake
 What does a solid white line on the road indicate?,You can change lanes,You cannot change lanes,It is a pedestrian crossing,It indicates a speed limit,You cannot change lanes
 What is the penalty for driving without a valid license in Minnesota?,A warning,Community service,A fine,Imprisonment,A fine
 What should you do if you are involved in a minor accident?,Leave the scene,Exchange information with the other driver,Call the police,Take pictures,Exchange information with the other driver
@@ -311,7 +186,7 @@ What is the correct procedure for safely exiting a freeway?,Signal and merge to 
 What should you do if you are driving and see a Slippery When Wet sign?,Slow down and drive cautiously,Speed up,Ignore it,Proceed normally,Slow down and drive cautiously
 What does a No U-Turn sign indicate?,You cannot make a U-turn,You must make a U-turn,You can make a U-turn only during certain hours,You can make a U-turn if safe,You cannot make a U-turn
 What is the correct action when you see an emergency vehicle with flashing lights?,Pull over to the right and stop,Speed up,Ignore it,Proceed with caution,Pull over to the right and stop
-What should you do if you are driving and see a Bump sign?,Slow down and prepare for a bump,Speed up,Ignore it,Proceed normally,Slow down and prepare for a bump
+What should you do if you are driving and see a Bump sign?,Reduce speed and prepare for uneven road,Maintain current speed,Change lanes,Pull over and stop,Reduce speed and prepare for uneven road
 What is the purpose of a No Left Turn sign?,To indicate that left turns are prohibited,To suggest a left turn,To indicate that left turns are allowed,To indicate a speed limit,To indicate that left turns are prohibited
 What should you do if you are driving and see a Stop Ahead sign?,Prepare to stop,Speed up,Ignore it,Proceed normally,Prepare to stop
 What does a One Way sign indicate?,Traffic must go in one direction,Traffic can go in any direction,Traffic must turn around,Traffic is prohibited,Traffic must go in one direction
@@ -322,7 +197,7 @@ What should you do if you are driving and see a Roundabout sign?,Slow down and p
 What does a School Zone sign indicate?,You are entering a school zone,You must stop,You can speed up,You can ignore it,You are entering a school zone
 What should you do if you are driving and see a No Turn on Red sign?,Do not turn on red,You can turn on red,You must turn on red,You can turn if safe,Do not turn on red
 What is the purpose of a Speed Limit sign?,To indicate the maximum speed allowed,To indicate the minimum speed allowed,To suggest a speed,To indicate a school zone,To indicate the maximum speed allowed
-What should you do if you are driving and see a Merge Right sign?,Merge right,Stay in your lane,Speed up,Ignore it,Marge right
+What should you do if you are driving and see a Merge Right sign?,Merge right,Stay in your lane,Speed up,Ignore it,Merge right
 What does a Pedestrian Crossing sign indicate?,Watch for pedestrians,Ignore it,Speed up,Proceed normally,Watch for pedestrians
 What is the correct procedure for using your turn signal?,Signal before turning or changing lanes,Signal after turning,Do not use it,Only use it in emergencies,Signal before turning or changing lanes
 What should you do if you are driving and see a Road Narrows sign?,Slow down and prepare for a narrower road,Speed up,Ignore it,Proceed normally,Slow down and prepare for a narrower road
@@ -331,3 +206,18 @@ What should you do if you are driving and see a Traffic Signal Ahead sign?,Prepa
 What does a Keep Right sign indicate?,Stay in the right lane,Stay in the left lane,You can choose either lane,You must turn right,Stay in the right lane
 What is the correct action when approaching a stop sign?,Come to a complete stop,Speed up,Ignore it,Proceed normally,Come to a complete stop
 What should you do if you are driving and see a No Passing Zone sign?,Do not pass,You can pass,You must pass if safe,You can pass only during certain hours,Do not pass
+What is the maximum speed limit on Minnesota urban interstate highways?,55 mph,60 mph,65 mph,70 mph,65 mph
+What is the minimum following distance recommended in good weather conditions?,2 seconds,3 seconds,4 seconds,5 seconds,3 seconds
+What is the "Move Over Law" requirement when passing emergency vehicles?,Move to the far lane,Slow down only,Stop completely,Either move over or slow down significantly,Either move over or slow down significantly
+When is it legal to pass a school bus with flashing red lights?,Never,When no children are visible,When on a divided highway going opposite direction,When the bus is moving,When on a divided highway going opposite direction
+What is the fine for a first offense of texting while driving in Minnesota?,$50,$100,$135,$175,$135
+What is the blood alcohol concentration (BAC) limit for commercial drivers in Minnesota?,0.08%,0.04%,0.02%,0.00%,0.04%
+How soon must you report a change of address to the DMV after moving?,30 days,45 days,60 days,90 days,30 days
+What is the minimum liability insurance coverage required for property damage in Minnesota?,$10000,$15000,$20000,$30000,$30000
+In what situation can you drive in the left lane on a multi-lane highway?,When passing only,When traffic is heavy,Anytime you want,When driving slowly,When passing only
+What is the speed limit in an alley unless otherwise posted?,10 mph,15 mph,20 mph,25 mph,10 mph
+What should you do if you see a traffic signal turn yellow?,Prepare to stop safely,Speed up to get through,Continue at same speed,Make a quick stop,Prepare to stop safely
+What should you do if your vehicle starts to skid?,Steer in the direction you want to go,Brake hard immediately,Turn steering wheel rapidly,Accelerate quickly,Steer in the direction you want to go
+What should you do if you see a Stop Ahead sign?,Prepare to come to a full stop,Maintain current speed,Speed up to clear intersection,Slow to 15 mph only,Prepare to come to a full stop
+What should you do if you see a Railroad Crossing sign?,Stop look and listen for trains,Stop only if train visible,Maintain speed and cross quickly,Slow down slightly,Stop look and listen for trains
+What should you do if you see a Yield sign?,Slow down and yield to traffic,Stop completely always,Proceed without slowing,Speed up to merge,Slow down and yield to traffic
