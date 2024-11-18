@@ -1,8 +1,48 @@
+"""Quiz data loading and processing functionality."""
 import csv
 from pathlib import Path
 import streamlit as st
-from typing import List
+import logging
+import unicodedata
+from typing import List, Dict, Any, Optional
 import re
+
+# Set up logging
+logging.basicConfig(
+    level=logging.ERROR,
+    filename='quiz_errors.log',
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
+
+def clean_text(text: Optional[str]) -> str:
+    """Clean and validate text input."""
+    if text is None:
+        return ""
+    
+    # Fix common encoding issues
+    text = text.strip()
+    
+    # Replace problematic characters
+    replacements = {
+        'â€™': "'",
+        'â€"': "–",
+        'â€œ': '"',
+        'â€': '"',
+        '\u2019': "'",
+        '\u201c': '"',
+        '\u201d': '"',
+        '\u2013': "–",
+        '\u2014': "—"
+    }
+    
+    for old, new in replacements.items():
+        text = text.replace(old, new)
+    
+    # Normalize unicode characters
+    text = unicodedata.normalize('NFKC', text)
+    
+    return text
 
 def generate_explanation(question: str, correct_answer: str, topic: str) -> str:
     """Generate an explanation for the correct answer based on context"""
@@ -65,6 +105,50 @@ def categorize_question(question: str) -> str:
     
     return "General Knowledge"
 
+def validate_question(row: Dict[str, str]) -> Optional[Dict[str, Any]]:
+    """Validate and clean question data."""
+    try:
+        # Clean all text fields
+        question = clean_text(row.get('Question'))
+        correct_answer = clean_text(row.get('Correct Answer'))
+        options = [
+            clean_text(row.get('Option A')),
+            clean_text(row.get('Option B')),
+            clean_text(row.get('Option C')),
+            clean_text(row.get('Option D'))
+        ]
+        
+        # Validate required fields silently
+        if not question or not correct_answer:
+            logger.error(f"Invalid question: Missing question or correct answer")
+            return None
+            
+        # Remove empty options and ensure we have at least 2 options
+        options = [opt for opt in options if opt]
+        if len(options) < 2:
+            logger.error(f"Invalid question: Not enough valid options")
+            return None
+            
+        # Ensure correct answer is in options
+        if correct_answer not in options:
+            logger.error(f"Invalid question: Correct answer not in options")
+            # Add correct answer to options if missing
+            options.append(correct_answer)
+            
+        # Determine topic
+        topic = categorize_question(question)
+        
+        return {
+            'question': question,
+            'options': options,
+            'correct_answer': correct_answer,
+            'topic': topic,
+            'explanation': generate_explanation(question, correct_answer, topic)
+        }
+    except Exception as e:
+        logger.error(f"Error processing question: {str(e)}")
+        return None
+
 @st.cache_data
 def load_quiz_data() -> List[dict]:
     """Load quiz data from CSV and convert to proper format"""
@@ -72,29 +156,36 @@ def load_quiz_data() -> List[dict]:
     csv_path = Path("Minnesota_Driving_Quiz.csv")
     
     try:
-        with open(csv_path, 'r') as file:
+        with open(csv_path, 'r', encoding='utf-8') as file:
             reader = csv.DictReader(file)
             for row in reader:
-                try:
-                    # Determine topic first for explanation generation
-                    topic = categorize_question(row['Question'])
-                    
-                    # Format question data
-                    question = {
-                        'question': row['Question'],
-                        'options': [row['Option A'], row['Option B'], row['Option C'], row['Option D']],
-                        'correct_answer': row['Correct Answer'],
-                        'topic': topic,
-                        'explanation': generate_explanation(row['Question'], row['Correct Answer'], topic)
-                    }
-                    # Ensure options are properly formatted
-                    question['options'] = [opt.strip() if opt is not None else '' for opt in question['options']]
-                    # Ensure correct answer is properly formatted
-                    question['correct_answer'] = question['correct_answer'].strip() if question['correct_answer'] is not None else ''
-                    quiz_data.append(question)
-                except KeyError as e:
-                    st.error(f"Missing or incorrect key in CSV data: {str(e)}")
+                validated_question = validate_question(row)
+                if validated_question is not None:
+                    quiz_data.append(validated_question)
+                
     except Exception as e:
-        st.error(f"Error reading quiz data: {str(e)}")
+        logger.error(f"Error reading quiz data: {str(e)}")
+        # Return default questions if loading fails
+        return [
+            {
+                'question': 'What is the default speed limit in a residential area?',
+                'options': ['30 mph', '25 mph', '35 mph', '40 mph'],
+                'correct_answer': '30 mph',
+                'topic': 'Speed Limits',
+                'explanation': 'The default speed limit in a residential area is 30 mph unless otherwise posted.'
+            }
+        ]
+    
+    if not quiz_data:
+        logger.error("No valid questions loaded")
+        return [
+            {
+                'question': 'What is the default speed limit in a residential area?',
+                'options': ['30 mph', '25 mph', '35 mph', '40 mph'],
+                'correct_answer': '30 mph',
+                'topic': 'Speed Limits',
+                'explanation': 'The default speed limit in a residential area is 30 mph unless otherwise posted.'
+            }
+        ]
     
     return quiz_data
